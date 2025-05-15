@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{.Title}}</title>
+  </head>
+  <body>
+    <h1>{{.Title}}</h1>
+    <div>
+      {{range .Story}}
+      <p>{{.}}</p>
+      {{end}}
+    </div>
+
+    {{if .Options}}
+    <h3>What do you want to do next?</h3>
+    <ul>
+      {{range .Options}}
+      <li><a href="/{{.Arc}}">{{.Text}}</a></li>
+      {{end}}
+    </ul>
+
+    {{end}}
+  </body>
+</html>
